@@ -1,12 +1,11 @@
-import { useState } from 'react'
+import Navbar from "./components/Navbar";
 
-function App() {
-
+export default function App() {
   return (
     <>
-      Hello Word!
+      <Navbar />
+          
     </>
-  )
+  );
 }
 
-export default App
