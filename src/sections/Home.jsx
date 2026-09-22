@@ -15,8 +15,8 @@ function Home() {
     return (
         <section id="home" className="relative min-h-screen overflow-hidden bg-[#0D0F12] pt-20">
             
-            <div className="absolute -right-32 top-20 h-72 w-72 rounded-full border border-[#B96CFF]/10 animate-spin" />
-            <div className="absolute -right-20 top-32 h-56 w-56 rounded-full border border-[#2BB6B6]/10 animate-spin" />
+            <div className="pointer-events-none absolute -right-40 top-20 h-76 w-80 rounded-full border border-[#B96CFF]/20 animate-[spin_25s_linear_infinite]" />
+            <div className="pointer-events-none absolute -right-28 top-30 h-60 w-64 rounded-full border border-[#2BB6B6]/20 animate-[spin_18s_linear_infinite_reverse]" />
             <div className="absolute left-10 top-1/3 h-2 w-2 rounded-full bg-[#B96CFF] shadow-[0_0_20px_#B96CFF] animate-pulse" />
             <div className="absolute bottom-20 right-1/3 h-2 w-2 rounded-full bg-[#2BB6B6] shadow-[0_0_20px_#2BB6B6] animate-pulse" />
 
@@ -70,7 +70,7 @@ function Home() {
                     </div>
                     <div className="relative flex min-h-100 items-center justify-center lg:min-h-137.5">
 
-                        <div className="absolute h-64 w-64 rotate-12 border border-[#B96CFF]/20 animate-[spin_10s_linear_infinite] sm:h-80 sm:w-80 lg:h-105 lg:w-105" />
+                        <div className="absolute h-64 w-64 rotate-12 border border-[#B96CFF]/20 animate-[spin_12s_linear_infinite] sm:h-80 sm:w-80 lg:h-105 lg:w-105" />
                         <div className="absolute h-64 w-64 -rotate-6 rounded-full border border-[#2BB6B6]/ sm:h-80 sm:w-80 lg:h-100 lg:w-100" />
 
                         <div className="relative z-10 h-72 w-72 overflow-hidden rounded-full border border-[#30343B] bg-[#15181D] shadow-[0_0_60px_rgba(185,108,255,0.08)] transition hover:scale-105 sm:h-80 sm:w-80 lg:h-100 lg:w-100">

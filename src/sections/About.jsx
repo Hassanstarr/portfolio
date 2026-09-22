@@ -11,8 +11,8 @@ function About() {
             id="about"
             className="relative min-h-screen overflow-hidden bg-[#0D0F12] py-24 sm:py-28 lg:py-32"
         >
-            <div className="pointer-events-none absolute -left-40 top-20 h-80 w-80 rounded-full border border-[#B96CFF]/10 animate-[spin_25s_linear_infinite]" />
-            <div className="pointer-events-none absolute -left-32 top-32 h-64 w-64 rounded-full border border-[#2BB6B6]/10 animate-[spin_18s_linear_infinite_reverse]" />
+            <div className="pointer-events-none absolute -left-40 top-20 h-75 w-80 rounded-full border border-[#B96CFF]/20 animate-[spin_25s_linear_infinite]" />
+            <div className="pointer-events-none absolute -left-32 top-30 h-60 w-65 rounded-full border border-[#2BB6B6]/20 animate-[spin_18s_linear_infinite_reverse]" />
             <div className="pointer-events-none absolute left-10 top-1/3 h-2 w-2 rounded-full bg-[#B96CFF] shadow-[0_0_20px_#B96CFF] animate-pulse" />
             <div className="pointer-events-none absolute bottom-20 right-1/3 h-2 w-2 rounded-full bg-[#2BB6B6] shadow-[0_0_20px_#2BB6B6] animate-pulse" />
             <div className="pointer-events-none absolute right-16 top-32 h-1.5 w-1.5 rounded-full bg-[#B96CFF] shadow-[0_0_15px_#B96CFF] animate-pulse" />
