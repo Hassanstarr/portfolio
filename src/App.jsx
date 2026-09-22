@@ -1,6 +1,7 @@
 import Navbar from "./components/Navbar";
 import Home from "./sections/Home";
 import About from "./sections/About";
+import Skills from "./sections/Skill";
 
 export default function App() {
   return (
@@ -8,6 +9,7 @@ export default function App() {
         <Navbar />
         <Home />
         <About />
+        <Skills />
     </>
   );
 }
