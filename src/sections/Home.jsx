@@ -68,12 +68,12 @@ function Home() {
                         </div>
 
                     </div>
-                    <div className="relative flex min-h-100 items-center justify-center lg:min-h-137.5">
+                    <div className="relative flex min-h-100 items-center justify-center lg:min-h-137.5 ">
 
-                        <div className="absolute h-64 w-64 rotate-12 border border-[#B96CFF]/20 animate-[spin_12s_linear_infinite] sm:h-80 sm:w-80 lg:h-105 lg:w-105" />
+                        <div className="absolute h-64 w-64 rotate-12 border border-[#B96CFF]/20 animate-[spin_12s_linear_infinite] sm:h-75 sm:w-75 lg:h-100 lg:w-100" />
                         <div className="absolute h-64 w-64 -rotate-6 rounded-full border border-[#2BB6B6]/ sm:h-80 sm:w-80 lg:h-100 lg:w-100" />
 
-                        <div className="relative z-10 h-72 w-72 overflow-hidden rounded-full border border-[#30343B] bg-[#15181D] shadow-[0_0_60px_rgba(185,108,255,0.08)] transition hover:scale-105 sm:h-80 sm:w-80 lg:h-100 lg:w-100">
+                        <div className="relative z-10 h-64 w-64 overflow-hidden rounded-full border border-[#30343B] bg-[#15181D] shadow-[0_0_60px_rgba(185,108,255,0.08)] transition hover:scale-105 sm:h-75 sm:w-75 lg:h-90 lg:w-90">
                             <img
                                 src={homeData.image.src}
                                 alt={homeData.image.alt}
@@ -81,14 +81,14 @@ function Home() {
                             />
                         </div>
 
-                        <div className="absolute bottom-5 left-1/2 z-20 -translate-x-1/2 whitespace-nowrap border border-[#30343B] bg-[#15181D]/90 px-4 py-2 font-mono text-xs text-[#9297A1] backdrop-blur-md sm:bottom-8">
+                        <div className="absolute bottom-5 left-1/2 z-20 -translate-x-1/2 whitespace-nowrap border border-[#30343B] bg-[#15181D]/90 px-4 py-2 font-mono text-xs text-[#9297A1] backdrop-blur-md sm:bottom-8 transition-all duration-300 hover:border-[#B96CFF]/50 hover:text-[#F5F5F5]">
                             {"<"} build • learn • create {"/>"}
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div className="absolute bottom-7 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2 text-[#9297A1] md:flex animate-[bounce_6s_ease-in-out_infinite]">
+            <div className="absolute bottom-7 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2 text-[#9297A1] md:flex animate-[bounce_5s_ease-in-out_infinite]">
                 <span className="font-mono text-[10px] tracking-widest">
                     SCROLL
                 </span>
