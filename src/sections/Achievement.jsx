@@ -39,7 +39,7 @@ function Achievements() {
         <section
             ref={sectionRef}
             id="achievements"
-            className="relative overflow-hidden bg-[#0D0F12] py-24 sm:py-28 lg:py-32"
+            className="relative min-h-screen overflow-hidden bg-[#0D0F12] py-24 sm:py-28 lg:py-32"
         >
 
             <div className="pointer-events-none absolute -right-40 top-20 h-80 w-80 rounded-full border border-[#B96CFF]/10 animate-[spin_28s_linear_infinite]" />
@@ -62,7 +62,7 @@ function Achievements() {
 
 
 
-            <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8">
+            <div className="relative mx-auto flex w-full max-w-7xl min-h-[calc(100vh-5rem)] flex-col justify-center px-5 sm:px-6 lg:px-8">
 
 
                 <div
