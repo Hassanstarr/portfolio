@@ -11,7 +11,7 @@ function Projects() {
         <section
             ref={sectionRef}
             id="projects"
-            className="relative overflow-hidden bg-[#0D0F12] py-24 sm:py-28 lg:py-32"
+            className="relative min-h-screen overflow-hidden bg-[#0D0F12] py-24 sm:py-28 lg:py-32"
         >
 
             <div className="pointer-events-none absolute -left-40 top-20 h-75 w-80 rounded-full border border-[#B96CFF]/20 animate-[spin_25s_linear_infinite]" />
@@ -28,7 +28,7 @@ function Projects() {
             <div className="pointer-events-none absolute bottom-32 left-10 hidden h-32 w-px bg-linear-to-b from-transparent via-[#30343B] to-transparent lg:block" />
 
 
-            <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8">
+            <div className="relative mx-auto flex w-full max-w-7xl min-h-[calc(100vh-5rem)] flex-col justify-center px-5 sm:px-6 lg:px-8">
 
 
                 <div
@@ -247,7 +247,7 @@ function Projects() {
                     }}
                 >
                     <a
-                        href="/projects"
+                        href="/"
                         className="group inline-flex items-center gap-3 border border-[#30343B] bg-[#15181D] px-6 py-3 font-mono text-sm text-[#F5F5F5] transition-all duration-300 hover:-translate-y-1 hover:border-[#B96CFF] hover:text-[#B96CFF]"
                     >
                         <span>View All Projects</span>
