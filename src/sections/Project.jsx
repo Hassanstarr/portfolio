@@ -247,7 +247,8 @@ function Projects() {
                     }}
                 >
                     <a
-                        href="/"
+                        href="https://github.com/Hassanstarr?tab=repositories"
+                        target="_blank"
                         className="group inline-flex items-center gap-3 border border-[#30343B] bg-[#15181D] px-6 py-3 font-mono text-sm text-[#F5F5F5] transition-all duration-300 hover:-translate-y-1 hover:border-[#B96CFF] hover:text-[#B96CFF]"
                     >
                         <span>View All Projects</span>
