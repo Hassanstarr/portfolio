@@ -219,7 +219,7 @@ function Achievements() {
                                                 />
 
                                                 <div className="absolute h-32 w-32 rounded-full border border-[#B96CFF]/15 animate-[spin_15s_linear_infinite]" />
-                                                <div className="absolute h-20 w-20 rotate-45 border border-[#2BB6B6]/15" />
+                                                <div className="absolute h-20 w-20 rotate-45 border border-[#2BB6B6]/15 animate-[spin_20s_linear_infinite_reverse]" />
                                                 <div className="absolute left-6 top-6 h-1.5 w-1.5 rounded-full bg-[#B96CFF] shadow-[0_0_15px_#B96CFF] animate-pulse" />
                                                 <div className="absolute bottom-6 right-6 h-1.5 w-1.5 rounded-full bg-[#2BB6B6] shadow-[0_0_15px_#2BB6B6] animate-pulse" />
 

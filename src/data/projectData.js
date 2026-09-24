@@ -133,7 +133,7 @@ const projectsData = {
                 "Responsive cross-browser UI layout",
             ],
 
-            github: "https://github.com/Hassanstarr/hypersoft-lab",
+            github: null,
             live: "https://hypersoft-lab-hassans-projects-098c3892.vercel.app/",
         },
     ],
