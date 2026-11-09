@@ -1,14 +1,17 @@
-import React, { useMemo, useState } from "react";
-import { FiAward, FiExternalLink, FiSearch, FiX } from "react-icons/fi";
+import { useMemo, useState } from "react";
+import { FiAward, FiChevronDown, FiChevronUp, FiExternalLink, FiSearch, FiX } from "react-icons/fi";
 
 import achievementsData from "../data/achievementData.js";
 import useScrollReveal from "../hooks/useScrollReveal.js";
+
+const previewCount = 6;
 
 function Achievements() {
     const [sectionRef, isVisible] = useScrollReveal();
 
     const [activeCategory, setActiveCategory] = useState("All");
     const [searchTerm, setSearchTerm] = useState("");
+    const [isExpanded, setIsExpanded] = useState(false);
 
     const filteredAchievements = useMemo(() => {
         return achievementsData.achievements.filter((achievement) => {
@@ -16,23 +19,28 @@ function Achievements() {
                 activeCategory === "All" ||
                 achievement.category === activeCategory;
 
-            const searchText = searchTerm.toLowerCase();
-
-            const matchesSearch =
-                achievement.title.toLowerCase().includes(searchText) ||
-                achievement.organization
-                    .toLowerCase()
-                    .includes(searchText) ||
-                achievement.category
-                    .toLowerCase()
-                    .includes(searchText);
+            const searchText = searchTerm.trim().toLowerCase();
+            const matchesSearch = [
+                achievement.title,
+                achievement.organization,
+                achievement.department,
+                achievement.category,
+                achievement.year,
+                achievement.description,
+                achievement.ceremony,
+            ].filter(Boolean).join(" ").toLowerCase().includes(searchText);
 
             return matchesCategory && matchesSearch;
         });
     }, [activeCategory, searchTerm]);
 
+    const visibleAchievements = isExpanded
+        ? filteredAchievements
+        : filteredAchievements.slice(0, previewCount);
+
     const clearSearch = () => {
         setSearchTerm("");
+        setIsExpanded(false);
     };
 
     return (
@@ -122,7 +130,11 @@ function Achievements() {
                             <button
                                 key={category}
                                 type="button"
-                                onClick={() => setActiveCategory(category)}
+                                onClick={() => {
+                                    setActiveCategory(category);
+                                    setIsExpanded(false);
+                                }}
+                                aria-pressed={activeCategory === category}
                                 className={`cursor-pointer border px-4 py-2 font-mono text-xs transition-all duration-300 ${
                                     activeCategory === category
                                         ? "border-[#B96CFF] bg-[#B96CFF] text-[#0D0F12]"
@@ -143,10 +155,12 @@ function Achievements() {
 
                         <input
                             type="text"
+                            aria-label="Search achievements"
                             value={searchTerm}
-                            onChange={(event) =>
-                                setSearchTerm(event.target.value)
-                            }
+                            onChange={(event) => {
+                                setSearchTerm(event.target.value);
+                                setIsExpanded(false);
+                            }}
                             placeholder="Search achievements..."
                             className="w-full border border-[#30343B] bg-[#15181D] py-2.5 pl-9 pr-10 font-mono text-xs text-[#F5F5F5] outline-none transition-all duration-300 placeholder:text-[#555B65] focus:border-[#B96CFF]"
                         />
@@ -166,11 +180,9 @@ function Achievements() {
 
 
                 <div className="mb-5 flex items-center justify-between">
-                    <span className="font-mono text-[10px] tracking-widest text-[#9297A1]">
-                        {filteredAchievements.length}{" "}
-                        {filteredAchievements.length === 1
-                            ? "ITEM"
-                            : "ITEMS"}
+                    <span aria-live="polite" className="font-mono text-[10px] tracking-widest text-[#9297A1]">
+                        SHOWING {visibleAchievements.length} OF {filteredAchievements.length}{" "}
+                        {filteredAchievements.length === 1 ? "ITEM" : "ITEMS"}
                     </span>
 
                     <span className="font-mono text-[10px] tracking-widest text-[#30343B]">
@@ -180,12 +192,12 @@ function Achievements() {
 
 
                 {filteredAchievements.length > 0 ? (
-                    <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-                        {filteredAchievements.map(
-                            (achievement, index) => (
+                    <div id="achievement-cards" className="grid items-stretch gap-5 md:grid-cols-2 lg:grid-cols-3">
+                        {visibleAchievements.map(
+                            (achievement) => (
                                 <article
                                     key={achievement.id}
-                                    className={`group relative overflow-hidden border border-[#30343B] bg-[#15181D]/60 transition-all duration-700 hover:-translate-y-2 hover:border-[#B96CFF]/50 hover:bg-[#15181D] ${
+                                    className={`group relative flex h-full min-w-0 flex-col overflow-hidden border border-[#30343B] bg-[#15181D]/60 transition-all duration-700 hover:-translate-y-2 hover:border-[#B96CFF]/50 hover:bg-[#15181D] ${
                                         isVisible
                                             ? "translate-y-0 opacity-100"
                                             : "translate-y-12 opacity-0"
@@ -196,7 +208,7 @@ function Achievements() {
                                     <div className="absolute right-0 top-0 z-20 h-7 w-7 border-r border-t border-[#30343B] transition-colors duration-300 group-hover:border-[#B96CFF]/50" />
 
 
-                                    <div className="relative h-48 overflow-hidden border-b border-[#30343B]">
+                                    <div className={`relative shrink-0 overflow-hidden border-b border-[#30343B] ${achievement.image ? "h-48" : "h-28"}`}>
 
                                         {achievement.image ? (
                                             <img
@@ -251,9 +263,9 @@ function Achievements() {
                                     </div>
 
 
-                                    <div className="p-5">
+                                    <div className="flex flex-1 flex-col p-5">
 
-                                        <h3 className="font-mono text-lg font-semibold text-[#F5F5F5] transition-colors duration-300 group-hover:text-[#B96CFF]">
+                                        <h3 className="wrap-anywhere font-mono text-base font-semibold leading-6 text-[#F5F5F5] transition-colors duration-300 group-hover:text-[#B96CFF]">
                                             {achievement.title}
                                         </h3>
 
@@ -261,12 +273,27 @@ function Achievements() {
                                             {achievement.organization}
                                         </p>
 
-                                        <p className="mt-4 text-sm leading-6 text-[#9297A1]">
-                                            {achievement.description}
-                                        </p>
+                                        {achievement.department && (
+                                            <p className="mt-2 text-xs leading-5 text-[#9297A1]">
+                                                {achievement.department}
+                                            </p>
+                                        )}
+
+                                        {achievement.description && (
+                                            <p className="mt-4 text-sm leading-6 text-[#9297A1]">
+                                                {achievement.description}
+                                            </p>
+                                        )}
+
+                                        {achievement.ceremony && (
+                                            <p className="mt-3 font-mono text-xs leading-5 text-[#9297A1]">
+                                                Ceremony: {achievement.ceremony}
+                                            </p>
+                                        )}
 
 
-                                        <div className="mt-5 flex items-center justify-between border-t border-[#30343B] pt-4">
+                                        <div className="mt-auto pt-5">
+                                        <div className="flex flex-wrap items-center justify-between gap-3 border-t border-[#30343B] pt-4">
 
                                             <div className="flex items-center gap-2">
                                                 <span className="h-1 w-1 rounded-full bg-[#2BB6B6] transition-all duration-300 group-hover:w-6" />
@@ -276,21 +303,23 @@ function Achievements() {
                                                 </span>
                                             </div>
 
-                                            {achievement.credential && (
+                                            {(achievement.credential || achievement.source) && (
                                                 <a
                                                     href={
-                                                        achievement.credential
+                                                        achievement.credential || achievement.source
                                                     }
                                                     target="_blank"
                                                     rel="noopener noreferrer"
+                                                    aria-label={`${achievement.sourceLabel || "Verify credential"}: ${achievement.title}`}
                                                     className="inline-flex items-center gap-1.5 font-mono text-[10px] text-[#9297A1] transition-colors hover:text-[#B96CFF]"
                                                 >
-                                                    Verify
+                                                    {achievement.sourceLabel || "Verify"}
                                                     <FiExternalLink
                                                         size={12}
                                                     />
                                                 </a>
                                             )}
+                                        </div>
                                         </div>
                                     </div>
                                 </article>
@@ -318,10 +347,31 @@ function Achievements() {
                             onClick={() => {
                                 setActiveCategory("All");
                                 setSearchTerm("");
+                                setIsExpanded(false);
                             }}
                             className="mt-5 cursor-pointer font-mono text-xs text-[#B96CFF] transition-colors hover:text-[#2BB6B6]"
                         >
                             Reset filters
+                        </button>
+                    </div>
+                )}
+
+                {filteredAchievements.length > previewCount && (
+                    <div className="mt-8 flex justify-center">
+                        <button
+                            type="button"
+                            aria-expanded={isExpanded}
+                            aria-controls="achievement-cards"
+                            onClick={() => {
+                                setIsExpanded(!isExpanded);
+                                if (isExpanded) {
+                                    sectionRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+                                }
+                            }}
+                            className="inline-flex cursor-pointer items-center gap-3 border border-[#B96CFF]/50 bg-[#15181D] px-6 py-3 font-mono text-xs text-[#B96CFF] transition-colors hover:bg-[#B96CFF] hover:text-[#0D0F12] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#B96CFF]"
+                        >
+                            {isExpanded ? "Show less" : `Show more (${filteredAchievements.length - previewCount})`}
+                            {isExpanded ? <FiChevronUp size={16} /> : <FiChevronDown size={16} />}
                         </button>
                     </div>
                 )}
