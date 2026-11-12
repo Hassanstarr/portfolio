@@ -192,7 +192,7 @@ function Achievements() {
 
 
                 {filteredAchievements.length > 0 ? (
-                    <div id="achievement-cards" className="grid items-stretch gap-5 md:grid-cols-2 lg:grid-cols-3">
+                    <div id="achievement-cards" className="grid auto-rows-fr items-stretch gap-5 md:grid-cols-2 lg:grid-cols-3">
                         {visibleAchievements.map(
                             (achievement) => (
                                 <article
@@ -208,7 +208,7 @@ function Achievements() {
                                     <div className="absolute right-0 top-0 z-20 h-7 w-7 border-r border-t border-[#30343B] transition-colors duration-300 group-hover:border-[#B96CFF]/50" />
 
 
-                                    <div className={`relative shrink-0 overflow-hidden border-b border-[#30343B] ${achievement.image ? "h-48" : "h-28"}`}>
+                                    <div className="relative h-48 shrink-0 overflow-hidden border-b border-[#30343B]">
 
                                         {achievement.image ? (
                                             <a

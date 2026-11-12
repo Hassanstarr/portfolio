@@ -1,4 +1,4 @@
-import profileImage from "../assets/profilePixel.png";
+import profileImage from "../assets/home-portrait.jpg";
 
 
 const homeData = {
