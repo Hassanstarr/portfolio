@@ -58,7 +58,6 @@ const certifications = [
     ["ai-for-everyone", "AI For Everyone", "DeepLearning.AI", "Jan 2025", aiForEveryoneCertificate, courseraCredential("QYJITD9L6MIV")],
     ["data-fest", "Data Seekho - Data Fest 2024", "Data Seekho", "Nov 2024", dataFestCertificate, "https://credsverse.com/credentials/c0021b67-1e7c-41df-82f2-787fa229cbde"],
     ["microsoft-word", "Microsoft Office Specialist: Word 2019 Associate", "Microsoft", "Apr 2022", microsoftWordCertificate, "https://www.certiport.com/portal/pages/credentialverification.aspx?code=waVGa-H9mE"],
-    ["generative-ai", "Generative AI", "HEC Pakistan", "Dec 2025"],
 ].map(([id, title, organization, year, image = null, credential, imageKind]) => ({
     id,
     category: "Certifications",
@@ -74,7 +73,8 @@ const certifications = [
 }));
 
 const volunteerRoles = [
-    ["uicpam-media", "Usher & Media Team — 9th UICPAM", "Jun 2026", "activity:7482843487370145792", uicpamUsherCertificate, "Supported conference media coverage. UMT awarded a Certificate of Participation for serving as an usher."],
+    ["uicpam-media", "Media Team Member — 9th UICPAM 2026", "Jun 2026", "activity:7482843487370145792"],
+    ["uicpam-2026-usher", "Usher — 9th UICPAM 2026", "Jun 2026", "activity:7482843487370145792", uicpamUsherCertificate, "Received a Certificate of Participation for serving as an usher."],
     ["ssc-fest", "Organizer & SSC Participants Council Member — SSC-FEST", "Jan 2026"],
     ["orientation-leader", "Orientation Leader", "Oct 2025", "ugcPost:7426690826761551873", orientationCertificate, "Received a Certificate of Appreciation for leading Fall 2025 orientation activities."],
     ["math-olympiad", "Organizer & Module Head — 2nd National Mathematical Olympiad", "Aug–Sep 2025", "activity:7382806838884319232", mathOlympiadCertificate, "Led the Desmos Graphing Calculator module and received a Certificate of Appreciation from CMAP and SSC."],
@@ -155,11 +155,13 @@ const achievementsData = {
             id: "genai-hackathon",
             category: "Hackathons",
             title: "Generative AI Hackathon",
-            organization: "GenAI / HEC / NCEAC Program",
-            year: "2025",
-            description: "Participated in a Generative AI focused hackathon and worked on an AI-based application as part of a team.",
+            organization: "HEC Pakistan / NCEAC",
+            year: "Dec 2025",
+            description: "Worked with a team to build an AI application during the Generative AI Hackathon.",
             image: null,
             type: "HACKATHON",
+            source: linkedinProfile,
+            sourceLabel: "LinkedIn profile",
         },
         ...volunteerRoles,
         {

@@ -1,4 +1,4 @@
-import profileImage from "../assets/profile.png";
+import profileImage from "../assets/about-pixel-portrait.jpg";
 
 const aboutData = {
     eyebrow: "02 / ABOUT",
@@ -19,7 +19,7 @@ const aboutData = {
 
     image: {
         src: profileImage,
-        alt: "Pixelated portrait of Muhammad Hassan",
+        alt: "Pixel art portrait of Muhammad Hassan",
     },
 
     highlights: [

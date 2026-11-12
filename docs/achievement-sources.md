@@ -35,8 +35,10 @@ independent credential verification.
 The public profile may contain further entries hidden behind sign-in.
 
 UMT records [8th UICPAM on 14–16 April 2025](https://events.umt.edu.pk/EventDetails.aspx?EID=10259).
-The SoftTech and Generative AI hackathons were retained from the existing
-portfolio. The research card links to the [published article](https://doi.org/10.1016/j.sasc.2026.200504).
+The SoftTech Hackathon was retained from the existing portfolio. Hassan
+confirmed that the Generative AI listing and the Generative AI Hackathon
+refer to the same achievement. The research card links to the
+[published article](https://doi.org/10.1016/j.sasc.2026.200504).
 
 ## Certificate images and verification links
 
@@ -74,7 +76,7 @@ Hassan supplied the original certificate images for the 2024–2025 and
 2025–2026 GDGoC-UMT Web Development Team entries. The two-year LinkedIn
 recap shows the 2025–2026 certificate.
 
-The 9th UICPAM post describes media team work, and the attached certificate
-recognizes ushering. The Mathalon photo shows the participation certificate
+The 9th UICPAM Media Team card links to the post. Its attached certificate
+recognizes ushering and appears on the separate Usher card. The Mathalon photo shows the participation certificate
 and third-place trophy together. The CIRE post contains event photos. No
 certificate photo was located for SSC-FEST or the 8th UICPAM roles.

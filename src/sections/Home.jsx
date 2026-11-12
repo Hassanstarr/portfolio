@@ -1,4 +1,3 @@
-import React from "react";
 import homeData from "../data/homeData.js";
 
 function Home() {
@@ -73,11 +72,11 @@ function Home() {
                         <div className="absolute h-64 w-64 rotate-12 border border-[#B96CFF]/20 animate-[spin_12s_linear_infinite] sm:h-75 sm:w-75 lg:h-100 lg:w-100" />
                         <div className="absolute h-64 w-64 -rotate-6 rounded-full border border-[#2BB6B6]/ sm:h-80 sm:w-80 lg:h-100 lg:w-100" />
 
-                        <div className="relative z-10 h-64 w-64 overflow-hidden rounded-full border border-[#30343B] bg-[#15181D] shadow-[0_0_60px_rgba(185,108,255,0.08)] transition hover:scale-105 sm:h-75 sm:w-75 lg:h-90 lg:w-90">
+                        <div className="group relative z-10 h-64 w-64 overflow-hidden rounded-full border border-[#30343B] bg-[#15181D] shadow-[0_0_60px_rgba(185,108,255,0.08)] transition-[scale,border-color,box-shadow] duration-500 hover:border-[#B96CFF]/50 hover:shadow-[0_0_60px_rgba(185,108,255,0.25)] motion-safe:hover:scale-105 motion-reduce:transition-none sm:h-75 sm:w-75 lg:h-90 lg:w-90">
                             <img
                                 src={homeData.image.src}
                                 alt={homeData.image.alt}
-                                className="h-full w-full object-cover"
+                                className="h-full w-full object-cover transition-[filter,scale] duration-500 group-hover:brightness-110 motion-safe:group-hover:scale-[1.03] motion-reduce:transition-none"
                             />
                         </div>
 

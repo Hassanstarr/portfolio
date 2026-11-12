@@ -1,4 +1,3 @@
-import React from "react";
 import aboutData from "../data/aboutData.js";
 import useScrollReveal from "../hooks/useScrollReveal.js";
 
@@ -146,21 +145,18 @@ function About() {
                         <span className="absolute left-0 top-4 h-5 w-5 border-l border-t border-[#B96CFF]/50" />
                         <span className="absolute bottom-4 right-0 h-5 w-5 border-b border-r border-[#2BB6B6]/50" />
 
-                        <div className="group relative z-10 h-64 w-64 overflow-hidden border border-[#30343B] bg-[#15181D] shadow-[0_0_60px_rgba(185,108,255,0.08)] transition-all duration-500 hover:scale-[1.03] hover:border-[#B96CFF]/50 sm:h-80 sm:w-80 lg:h-95 lg:w-95">
+                        <div className="group relative z-10 h-64 w-64 overflow-hidden border border-[#30343B] bg-[#15181D] shadow-[0_0_60px_rgba(185,108,255,0.08)] transition-[scale,border-color,box-shadow] duration-500 hover:border-[#B96CFF]/50 hover:shadow-[0_0_60px_rgba(185,108,255,0.22)] motion-safe:hover:scale-[1.03] motion-reduce:transition-none sm:h-80 sm:w-80 lg:h-95 lg:w-95">
 
                             <img
                                 src={aboutData.image.src}
                                 alt={aboutData.image.alt}
-                                className="h-full w-full object-cover grayscale transition-all duration-700 group-hover:scale-105 group-hover:grayscale-0"
-                                style={{
-                                    imageRendering: "pixelated",
-                                }}
+                                className="h-full w-full object-cover transition-[filter,scale] duration-700 [@media(hover:hover)]:group-[:not(:hover)]:brightness-75 [@media(hover:hover)]:group-[:not(:hover)]:grayscale motion-safe:group-hover:scale-105 motion-reduce:transition-none"
                             />
 
-                            <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-[#0D0F12]/60 via-transparent to-transparent" />
+                            <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-[#0D0F12]/60 via-transparent to-transparent transition-opacity duration-700 group-hover:opacity-0 motion-reduce:transition-none" />
 
                             <div
-                                className="pointer-events-none absolute inset-0 opacity-20"
+                                className="pointer-events-none absolute inset-0 opacity-20 transition-opacity duration-700 group-hover:opacity-0 motion-reduce:transition-none"
                                 style={{
                                     backgroundImage:
                                         "linear-gradient(rgba(185,108,255,0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(185,108,255,0.15) 1px, transparent 1px)",
@@ -168,7 +164,7 @@ function About() {
                                 }}
                             />
 
-                            <div className="pointer-events-none absolute left-0 top-0 h-px w-full bg-[#B96CFF]/40 animate-[scan_4s_linear_infinite]" />
+                            <div className="pointer-events-none absolute left-0 top-0 h-px w-full bg-[#B96CFF]/40 transition-opacity duration-500 group-hover:opacity-0 motion-safe:animate-[scan_4s_linear_infinite] motion-reduce:transition-none" />
 
                         </div>
 
