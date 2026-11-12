@@ -1,3 +1,5 @@
+/* Copyright (c) 2026 Muhammad Hassan. All rights reserved. */
+
 import aiAgentsCertificate from "../assets/certificates/ai-agents.jpg";
 import aiForEveryoneCertificate from "../assets/certificates/ai-for-everyone.jpg";
 import cppCertificate from "../assets/certificates/cpp-basics.jpg";

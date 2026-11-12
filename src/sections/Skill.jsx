@@ -1,3 +1,5 @@
+/* Copyright (c) 2026 Muhammad Hassan. All rights reserved. */
+
 import React from "react";
 import skillsData from "../data/skillData.js";
 import useScrollReveal from "../hooks/useScrollReveal.js";

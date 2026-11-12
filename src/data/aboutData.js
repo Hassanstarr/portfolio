@@ -1,3 +1,5 @@
+/* Copyright (c) 2026 Muhammad Hassan. All rights reserved. */
+
 import profileImage from "../assets/about-pixel-portrait.jpg";
 
 const aboutData = {

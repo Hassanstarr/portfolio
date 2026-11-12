@@ -1,3 +1,5 @@
+<!-- Copyright (c) 2026 Muhammad Hassan. All rights reserved. -->
+
 # Achievement sources
 
 Award dates were researched on 9 November 2026. Public certificate records and

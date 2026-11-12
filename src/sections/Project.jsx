@@ -1,3 +1,5 @@
+/* Copyright (c) 2026 Muhammad Hassan. All rights reserved. */
+
 import { FiArrowUpRight, FiGithub } from "react-icons/fi";
 
 import projectsData from "../data/projectData.js";

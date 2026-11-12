@@ -1,3 +1,5 @@
+/* Copyright (c) 2026 Muhammad Hassan. All rights reserved. */
+
 import aboutData from "../data/aboutData.js";
 import useScrollReveal from "../hooks/useScrollReveal.js";
 

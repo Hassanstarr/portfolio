@@ -1,3 +1,5 @@
+/* Copyright (c) 2026 Muhammad Hassan. All rights reserved. */
+
 import { useMemo, useState } from "react";
 import { FiAward, FiChevronDown, FiChevronUp, FiExternalLink, FiSearch, FiX } from "react-icons/fi";
 

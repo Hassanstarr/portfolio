@@ -1,3 +1,5 @@
+/* Copyright (c) 2026 Muhammad Hassan. All rights reserved. */
+
 import homeData from "../data/homeData.js";
 
 function Home() {
