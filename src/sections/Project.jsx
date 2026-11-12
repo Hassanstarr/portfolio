@@ -1,4 +1,3 @@
-import React from "react";
 import { FiArrowUpRight, FiGithub } from "react-icons/fi";
 
 import projectsData from "../data/projectData.js";
@@ -74,7 +73,7 @@ function Projects() {
 
 
                 <div className="space-y-8">
-                    {projectsData.projects.slice(0, 4).map((project, index) => (
+                    {projectsData.projects.slice(0, 4).map((project) => (
                         <article
                             key={project.id}
                             className={`group relative overflow-hidden border border-[#30343B] bg-[#15181D]/60 transition-all duration-1000 hover:-translate-y-1 hover:border-[#B96CFF]/50 hover:bg-[#15181D] ${
@@ -93,11 +92,14 @@ function Projects() {
                                 <div className="relative min-h-72 overflow-hidden lg:min-h-80">
 
                                     {project.image ? (
-                                        <img
-                                            src={project.image}
-                                            alt={`${project.title} project screenshot`}
-                                            className="h-full w-full object-contain p-4 transition-transform duration-700 group-hover:scale-105"
-                                        />
+                                        <div className="flex h-full min-h-72 items-center p-4 lg:min-h-80">
+                                            <img
+                                                src={project.image}
+                                                alt={`${project.title} project screenshot`}
+                                                className="h-auto w-full transition-transform duration-700 motion-safe:group-hover:scale-[1.03]"
+                                                style={project.imageClip ? { clipPath: project.imageClip } : undefined}
+                                            />
+                                        </div>
                                     ) : (
                                         <div className="relative flex h-full min-h-72 items-center justify-center overflow-hidden bg-[#15181D]">
 

@@ -1,6 +1,6 @@
 import cyberCrime from "../assets/projects/cyberCrime.png";
-import mernNotes from "../assets/projects/mern-notes.png";
-import teacherPortfolio from "../assets/projects/teacher-portfolio.png";
+import shopeaseCatalog from "../assets/projects/shopease-catalog.png";
+import hypersoftLab from "../assets/projects/hypersoft-lab-research.png";
 
 const projectsData = {
     eyebrow: "04 / PROJECTS",
@@ -16,8 +16,37 @@ const projectsData = {
 
     projects: [
         {
-            id: "cyber-crime-cms",
+            id: "shopease",
             number: "01",
+            category: "FULL STACK / NEXT.JS",
+            title: "ShopEase",
+            description:
+                "A Next.js storefront where customers can browse products, save items to a wishlist, and place orders. A separate admin dashboard manages the catalog and tracks fulfillment.",
+
+            image: shopeaseCatalog,
+
+            technologies: [
+                "Next.js",
+                "TypeScript",
+                "MongoDB",
+                "Mongoose",
+                "Tailwind CSS",
+            ],
+
+            features: [
+                "Product search, category filters, and wishlist",
+                "Stock-aware cart, checkout, and order confirmation emails",
+                "Admin tools for products, categories, and orders",
+                "Sales analytics and low-stock monitoring",
+            ],
+
+            github: "https://github.com/Hassanstarr/E-Commerce-Nextjs",
+            live: "https://e-commerce-nextjs-eosin.vercel.app/",
+        },
+
+        {
+            id: "cyber-crime-cms",
+            number: "02",
             category: "FULL STACK / SECURITY",
             title: "Cyber Crime Complaint Management System",
             description:
@@ -43,37 +72,6 @@ const projectsData = {
             ],
 
             github: "https://github.com/Hassanstarr/Cyber-Crime-Complaint-System",
-            live: null,
-        },
-
-        {
-            id: "mern-notes",
-            number: "02",
-            category: "FULL STACK / MERN",
-            title: "MERN Notes App",
-            description:
-                "A performant full-stack note-taking platform featuring high-throughput REST APIs, in-memory caching, and robust API rate limiting.",
-
-            image: mernNotes,
-
-            technologies: [
-                "React",
-                "Node.js",
-                "Express",
-                "MongoDB",
-                "Mongoose",
-                "Redis",
-                "Tailwind CSS",
-            ],
-
-            features: [
-                "Full CRUD operations with structured REST APIs",
-                "Redis-backed API rate limiting & response caching",
-                "Responsive and modern UI built with Tailwind CSS",
-                "Optimized MongoDB data schemas",
-            ],
-
-            github: "https://github.com/Hassanstarr/mern-thinkboard",
             live: null,
         },
 
@@ -116,7 +114,8 @@ const projectsData = {
             description:
                 "A high-performance portfolio website built for university faculty, integrating live academic database APIs for publications and citations.",
 
-            image: teacherPortfolio,
+            image: hypersoftLab,
+            imageClip: "inset(0.7% 0.3% 0.6% 0.3%)",
 
             technologies: [
                 "React.js",
