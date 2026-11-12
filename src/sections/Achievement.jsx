@@ -211,11 +211,20 @@ function Achievements() {
                                     <div className={`relative shrink-0 overflow-hidden border-b border-[#30343B] ${achievement.image ? "h-48" : "h-28"}`}>
 
                                         {achievement.image ? (
-                                            <img
-                                                src={achievement.image}
-                                                alt={`${achievement.title} certificate or award`}
-                                                className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                                            />
+                                            <a
+                                                href={achievement.image}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                aria-label={`Open full-size ${achievement.imageKind ?? "certificate"}: ${achievement.title}`}
+                                                className="block h-full w-full bg-[#15181D] p-2 focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-[#B96CFF]"
+                                            >
+                                                <img
+                                                    src={achievement.image}
+                                                    alt={`${achievement.title} ${achievement.imageKind ?? "certificate"}`}
+                                                    loading="lazy"
+                                                    className="h-full w-full object-contain"
+                                                />
+                                            </a>
                                         ) : (
                                             <div className="relative flex h-full items-center justify-center overflow-hidden bg-[#15181D]">
 
@@ -249,17 +258,17 @@ function Achievements() {
                                         )}
 
 
-                                        <div className="absolute inset-0 bg-linear-to-t from-[#0D0F12] via-transparent to-transparent opacity-70" />
-
-
-                                        <div className="absolute bottom-3 left-4 border border-[#30343B] bg-[#0D0F12]/80 px-2.5 py-1 font-mono text-[9px] tracking-widest text-[#B96CFF] backdrop-blur-md">
-                                            {achievement.category.toUpperCase()}
-                                        </div>
-
-
-                                        <div className="absolute right-4 top-3 font-mono text-[10px] text-[#F5F5F5]">
-                                            {achievement.year}
-                                        </div>
+                                        {!achievement.image && (
+                                            <>
+                                                <div className="absolute inset-0 bg-linear-to-t from-[#0D0F12] via-transparent to-transparent opacity-70" />
+                                                <div className="absolute bottom-3 left-4 border border-[#30343B] bg-[#0D0F12]/80 px-2.5 py-1 font-mono text-[9px] tracking-widest text-[#B96CFF] backdrop-blur-md">
+                                                    {achievement.category.toUpperCase()}
+                                                </div>
+                                                <div className="absolute right-4 top-3 font-mono text-[10px] text-[#F5F5F5]">
+                                                    {achievement.year}
+                                                </div>
+                                            </>
+                                        )}
                                     </div>
 
 
@@ -271,6 +280,7 @@ function Achievements() {
 
                                         <p className="mt-2 font-mono text-xs text-[#2BB6B6]">
                                             {achievement.organization}
+                                            {achievement.image && ` · ${achievement.year}`}
                                         </p>
 
                                         {achievement.department && (
@@ -303,22 +313,24 @@ function Achievements() {
                                                 </span>
                                             </div>
 
-                                            {(achievement.credential || achievement.source) && (
-                                                <a
-                                                    href={
-                                                        achievement.credential || achievement.source
-                                                    }
-                                                    target="_blank"
-                                                    rel="noopener noreferrer"
-                                                    aria-label={`${achievement.sourceLabel || "Verify credential"}: ${achievement.title}`}
-                                                    className="inline-flex items-center gap-1.5 font-mono text-[10px] text-[#9297A1] transition-colors hover:text-[#B96CFF]"
-                                                >
-                                                    {achievement.sourceLabel || "Verify"}
-                                                    <FiExternalLink
-                                                        size={12}
-                                                    />
-                                                </a>
-                                            )}
+                                            <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
+                                                {[
+                                                    [achievement.credential, "Verify credential"],
+                                                    [achievement.source, achievement.sourceLabel || "Source"],
+                                                ].filter(([href]) => href).map(([href, label]) => (
+                                                    <a
+                                                        key={href}
+                                                        href={href}
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        aria-label={`${label}: ${achievement.title}`}
+                                                        className="inline-flex items-center gap-1.5 font-mono text-[10px] text-[#9297A1] transition-colors hover:text-[#B96CFF]"
+                                                    >
+                                                        {label}
+                                                        <FiExternalLink size={12} />
+                                                    </a>
+                                                ))}
+                                            </div>
                                         </div>
                                         </div>
                                     </div>
