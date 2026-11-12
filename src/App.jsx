@@ -1,3 +1,5 @@
+/* Copyright (c) 2026 Muhammad Hassan. All rights reserved. */
+
 import Navbar from "./components/Navbar.jsx";
 import Home from "./sections/Home.jsx";
 import About from "./sections/About.jsx";

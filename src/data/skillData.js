@@ -1,3 +1,5 @@
+/* Copyright (c) 2026 Muhammad Hassan. All rights reserved. */
+
 const skillsData = {
     eyebrow: "03 / SKILLS",
 

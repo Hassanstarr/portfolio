@@ -1,3 +1,5 @@
+/* Copyright (c) 2026 Muhammad Hassan. All rights reserved. */
+
 import React from "react";
 import { FiArrowUp, FiArrowUpRight, FiGithub, FiLinkedin, FiMail } from "react-icons/fi";
 

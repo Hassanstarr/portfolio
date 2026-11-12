@@ -1,3 +1,5 @@
+/* Copyright (c) 2026 Muhammad Hassan. All rights reserved. */
+
 import { useEffect, useRef, useState } from "react";
 
 function useScrollReveal(options = {}) {

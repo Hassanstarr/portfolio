@@ -1,3 +1,5 @@
+/* Copyright (c) 2026 Muhammad Hassan. All rights reserved. */
+
 import cyberCrime from "../assets/projects/cyberCrime.png";
 import shopeaseCatalog from "../assets/projects/shopease-catalog.png";
 import hypersoftLab from "../assets/projects/hypersoft-lab-research.png";

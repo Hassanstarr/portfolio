@@ -1,3 +1,5 @@
+/* Copyright (c) 2026 Muhammad Hassan. All rights reserved. */
+
 import React, { useState } from "react";
 import { FiArrowUpRight, FiGithub, FiLinkedin, FiMail, FiSend } from "react-icons/fi";
 

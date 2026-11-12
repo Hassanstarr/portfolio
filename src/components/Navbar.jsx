@@ -1,3 +1,5 @@
+/* Copyright (c) 2026 Muhammad Hassan. All rights reserved. */
+
 import React, { useEffect, useState } from "react";
 import { HiOutlineBars3, HiOutlineXMark } from "react-icons/hi2";
 
